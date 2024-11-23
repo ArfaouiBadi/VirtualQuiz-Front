@@ -1,5 +1,28 @@
-<div>
-  <h2>Quiz</h2>
-  <input [(ngModel)]="username" placeholder="Enter your username" />
-  <button (click)="startQuiz()">Start Quiz</button>
+<div class="container d-flex justify-content-center align-items-center vh-100">
+  <div
+    class="text-center p-5 border rounded shadow-lg"
+    style="max-width: 500px; background-color: #f8f9fa;"
+  >
+    <h2 class="mb-4" style="color: #5c5be5; font-size: 2.5rem; font-weight: bold;">Quiz</h2>
+    <input
+      [(ngModel)]="username"
+      class="form-control mb-4"
+      type="text"
+      placeholder="Enter your username"
+      style="font-size: 1.5rem; padding: 1rem;"
+    />
+    <button
+      class="btn w-100"
+      (click)="startQuiz()"
+      style="
+        background-color: #5c5be5;
+        color: #fff;
+        border: none;
+        font-size: 1.5rem;
+        padding: 1rem;
+      "
+    >
+      Start Quiz
+    </button>
+  </div>
 </div>
