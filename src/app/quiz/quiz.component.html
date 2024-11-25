@@ -1,28 +1,45 @@
 <div class="container d-flex justify-content-center align-items-center vh-100">
   <div
-    class="text-center p-5 border rounded shadow-lg"
-    style="max-width: 500px; background-color: #f8f9fa;"
+    class="text-center p-5 border rounded shadow-lg d-flex flex-column"
+    style="max-width: 500px; background-color: #f8f9fa"
   >
-    <h2 class="mb-4" style="color: #5c5be5; font-size: 2.5rem; font-weight: bold;">Quiz</h2>
+    <h1 class="mb-4">Quiz Title</h1>
     <input
       [(ngModel)]="username"
+      (ngModelChange)="checkStartQuizEnabled()"
       class="form-control mb-4"
       type="text"
       placeholder="Enter your username"
-      style="font-size: 1.5rem; padding: 1rem;"
+      style="font-size: 1.5rem; padding: 1rem"
+    />
+    <input
+      type="file"
+      (change)="onFileSelected($event)"
+      class="form-control mb-4"
+      style="font-size: 1.5rem; padding: 1rem"
     />
     <button
-      class="btn w-100"
       (click)="startQuiz()"
-      style="
-        background-color: #5c5be5;
-        color: #fff;
-        border: none;
-        font-size: 1.5rem;
-        padding: 1rem;
-      "
+      class="btn btn-primary btn-lg"
+      style="font-size: 1.5rem"
+      [disabled]="startQuizDisabled"
     >
       Start Quiz
+    </button>
+    <div
+      *ngIf="loading"
+      class="d-flex justify-content-center align-items-center vh-100"
+    >
+      <div class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+    <button
+      class="btn btn-warning btn-lg"
+      style="font-size: 1.5rem"
+      [routerLink]="['/leaderboard']"
+    >
+      Leaderboard
     </button>
   </div>
 </div>

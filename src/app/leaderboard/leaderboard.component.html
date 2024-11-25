@@ -23,7 +23,7 @@
         <div class="ribbon"></div>
         <table>
           <tr *ngFor="let entry of leaderboard; let i = index">
-            <td class="number">{{ i + 1 }}</td> 
+            <td class="number">{{ i + 1 }}</td>
             <td class="name">{{ entry.name }}</td>
             <td class="points">
               {{ entry.score }} %
@@ -35,10 +35,12 @@
               />
             </td>
           </tr>
-        
         </table>
         <div id="buttons">
-          <button class="exit"  [routerLink]="['/quiz']">Back</button>
+          <button class="exit" [routerLink]="['/quiz']">Back</button>
+          <button class="exit" [routerLink]="['/leaderboard']">
+            Leaderboard
+          </button>
           <button class="continue">Continue</button>
         </div>
       </div>
